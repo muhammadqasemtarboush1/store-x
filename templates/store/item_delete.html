@@ -1,0 +1,15 @@
+{% extends '_base.html'%}
+
+{% block content %}
+<h2>
+    Delete {{item.name}}
+</h2>
+
+<form method="post" class="uniform">
+    {% csrf_token %}
+    <p> Are you sure you want to delete {{item.name}}</p>
+    <input type="submit" value="OK">
+</form>
+
+<a href="{% url 'item_update' item.id %}">Return to update  page</a>
+{% endblock content%}

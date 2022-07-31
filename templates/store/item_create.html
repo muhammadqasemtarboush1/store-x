@@ -1,0 +1,14 @@
+{% extends '_base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>
+    Create new Item
+</h2>
+
+<form method="post" class="uniform">
+{% csrf_token %}
+    {{form|crispy }}
+
+    <input type="submit" value="SAVE">
+</form>
+{% endblock content%}
